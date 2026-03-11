@@ -1,0 +1,16 @@
+print('曼巴\'黑曼巴')#输出'
+print('曼巴\"黑曼巴')#输出"
+print('让我门复活曼巴:\n成为黑\n曼巴吧，\n曼巴hell')#换行
+print('D:\\nusic')#输出\
+#\b可以删除\b前面一个字符
+print('hel\bloo\b')#删除前面的一个字符
+print('%88\r%99')#整体替换前面的字符
+#\t:水平制表符(一个制表符四个字母)
+print(123412341234)
+print('ab\tcd'.expandtabs(4))
+print('abc\td'.expandtabs(4))
+print('abcd\t'.expandtabs(4))
+print('abcd\ta'.expandtabs(4))
+print(123412341234)
+print('姓名\t\t性别\t\t年龄'.expandtabs(4))
+print('张山李\t男\t\t18'.expandtabs(4))
