@@ -1,1 +1,138 @@
+字符串
+字符串和列表元组一样支持下标查看
+字符串不可以修改不可以嵌套
+
+查看指定字符串第一次出现的下标
+res = str.index(值)
+
+按照指定字符分割字符串
+res = str.split('@')
+
+替换指定字符为新的字符
+res = str.replace(old 值,new 值)
+
+统计指定字符出现的次数
+res = str.count(值)
+
+从字符串两端开始删除指定字符，不是指定字符则停下
+res = str.strip(值)
+
+通用
+max(str)
+min(str)
+len(str)
+sort(str,reverse = bool)
+
+字符串遍历
+for i in str:
+    print(i)
+
+序列:（有序的元素集合）就是存放元素的数据容器，如列表，元组，字符串都是序列
+切片：从序列按照指定范围，取出一部分元素组成新的序列
+
+基本语法 序列[开始索引，结束索引，步长]切片操作是左闭右开
+注意事项1：起始索引默认为0，结束索引默认截取到末尾，步长默认为1
+注意事项2：当起始索引大于结束索引时，步长必须是负数，否则结果为空列表
+
+序列的其他操作：
+res = str1+str2 或者 tuple1 + tuple2  或者 list1 + list2  只能同类型序列才能相加
+序列相乘是把序列重复指定次数
+
+
+集合set:无序，元素唯一（自动去重）
+集合分为可变集合set和不可变集合frozenset
+可变集合set:内部元素无序而且不可通过index来访问，且会自动去重
+不可变集合frozenset:特点和可变集合一样，元素不可修改
+空集合的定义 set1 = set(
+
+不可变集合的定义
+set2 = frozenset(可迭代对象) 接受参数为可迭代对象，最终返回的值一定是不可变集合
+定义不可变空集合 set1 = frozenset()
+
+*集合中不能嵌套可变数据
+可变数据：列表，set
+不可变数据：元组,frozenset,str,字典
+
+增
+set.add(值) ：向集合里添加一个值
+set.update(可迭代对象):向集合添加值，必须是可迭代对象，比如列表，元组，集合
+
+set.remove(值):在列表中删除指定元素若不存在会报错
+set.discard(值):在列表中删除指定元素若不存在不会报错
+set.pop():在集合中随机删除，返回删除的值
+set.clear()清空集合
+
+由于集合中没有index,所以没有改的方法，但可以结合remove+add来实现修改功能
+
+使用成员运算符来实现查询功能，in ，not in,返回结果是bool
+
+集合的常用方法:
+res = set1.difference(set2) 返回在集合set1中不同于集合set2的数据
+set1.difference_update(set2) 在集合set1 里删除set2存在的数据(set1数据会发生变化set2不会)
+res = set1.unionj(set2) 合并两个集合，并且自动去重，返回一个新的集合，set1和set2都不会变
+判断set1是否为set2子集返回bool res =  set1.issubset(set2)
+判断set1是否为set2超集返回bool res = set1.insuperset(set2)
+判断是否有交集返回bool res = set1.isdisjoint(set2)
+
+数学运算
+并集 res = set1 | set2
+交集 res = set1 & set2
+差集 res = set1 - set2
+对称差集 res = set1 ^ set2
+
+遍历 for i in set:
+        print(i)
+
+集合特征：
+1无序，集合中的元素没有固定的位置无法通过下标来访问
+2不重复，集合会自动去重，每一个元素只保留一份
+3集合分为两种，可变集合set,和不可变集合frozenset
+4集合中的元素必须是不可变类型（元组，数字，frozenset）
+5集合支持数学运算 | & - ^
+
+字典
+1字典就是用来存放一组键值对数据，通过键key对值value进行crud
+2用{}包裹，每个元素之间用逗号分割，每个元素的格式为key:value
+3字典中的key不能重复否则后面的值value会覆盖前面的值
+4字典中的key是不可变类型但是后面的value可以是任意类型
+5字典是可以嵌套的
+
+字典的crud
+字典的添加 dict[没有的key] = 值
+字典的查看 print(dict[字典中有的key]) 查询一个不存在的key会报错
+res = dict.get(key,'key不存在')查询一个不存在的key 会显示默认值
+字典的删除
+del dict[key]删除指定的key
+res = dict.pop(key)删除指定的key,并返回删除key对应的value
+res = dict.pop(不存在的key,'删除失败')  如果删除一个不存在的key，那么可以设置一个默认报错信息，不然代码会报错
+dict.clear()清空字典
+字典的修改
+dict[key] = 值
+dict.update{key1:value,key2:value} 批量修改
+
+使用keys方法获取字典中的所有键key res = dict.keys()
+使用values方法获取字典中所有的值value res = dict.values()
+使用items方法获取字典中所有的键值对（key:value）每个键值对都是元组的形式 res = dict.items
+遍历
+for i in dict:
+      print(i)
+      print(dict[i])
+
+字典的特征
+1字典是以键值对的形式存在的，每个键值对对应一个值
+2字典的key不能重复，若重复后面的值会覆盖前面的
+3键不可改变必须是不可变类型，值可以是任意类型
+4不支持下标，字典不能通过下标取值
+5支持增删改查，支持for循环遍历
+
+对比:
+容器：list列表 tuple元组  str字符串  set集合 dict字典
+有序：list tuple str  可以通过下标来访问
+无序:set dict 元素没有固定位置，不能通过下标来访问
+
+可变：list,set,dict 可对内容进行增删改查
+不可变:元组，字符串，frozenset 内容固定创建后无法修改
+
+允许重复 list tuple str
+不允许重复 set,字典(key不允许但是value可以重复)
 
