@@ -69,7 +69,7 @@ set.clear()清空集合
 集合的常用方法:
 res = set1.difference(set2) 返回在集合set1中不同于集合set2的数据
 set1.difference_update(set2) 在集合set1 里删除set2存在的数据(set1数据会发生变化set2不会)
-res = set1.unionj(set2) 合并两个集合，并且自动去重，返回一个新的集合，set1和set2都不会变
+res = set1.union(set2) 合并两个集合，并且自动去重，返回一个新的集合，set1和set2都不会变
 判断set1是否为set2子集返回bool res =  set1.issubset(set2)
 判断set1是否为set2超集返回bool res = set1.insuperset(set2)
 判断是否有交集返回bool res = set1.isdisjoint(set2)
