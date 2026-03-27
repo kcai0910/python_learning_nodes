@@ -37,7 +37,7 @@ num = [1,2,3,4,5]
 num2 = copy.copy(num)
 深拷贝
 创建一个新的外部容器，并对其内部所有对象进行复制
-
+num3 = copy.deepcopy(num)
 深拷贝可以彻底消除数据之间的相互影响
 
 作用域有四种 LEGB
